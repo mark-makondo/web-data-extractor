@@ -1,0 +1,7 @@
+.admin {
+	@include setFlex(column, center, center);
+
+	position: relative;
+	flex: 1;
+}
+@import './adminResponsive';

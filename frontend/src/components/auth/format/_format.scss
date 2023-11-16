@@ -1,0 +1,32 @@
+.format {
+    @include setFlex(row, center, center);
+
+    position: relative;
+    border-radius: 0.5rem;
+    background-color: getColors(secondary-transparent);
+    box-shadow: $little-shadow;
+    padding: 0.3rem;
+    height: auto;
+    width: 70%;
+
+    &__left {
+        @include setFlex(column, center, center);
+
+        padding: 2rem;
+        flex: 50%;
+    }
+
+    &__right {
+        display: none;
+        background-color: getColors(primary-bg);
+        border-radius: 0.5rem;
+        height: 100%;
+        flex: 50%;
+
+        svg {
+            max-width: 100%;
+            width: 75%;
+        }
+    }
+}
+@import './formatResponsive';

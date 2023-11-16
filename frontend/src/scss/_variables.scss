@@ -1,0 +1,43 @@
+// font size variables
+$font-size-s: (
+    // 28.8px
+    'stand-out': 1.5rem,
+    // 20px
+    'normal-1': 1.25rem,
+    // 16px
+    'normal-2': 1rem,
+    // 14px
+    'normal-3': 0.875rem,
+    // 12px
+    'normal-4': 0.75rem
+);
+
+$font-size-l: (
+    'stand-out': 1.8rem,
+    // 20px
+    'normal-1': 1.25rem,
+    // 16px
+    'normal-2': 1rem,
+    // 14px
+    'normal-3': 0.875rem,
+    // 12px
+    'normal-4': 0.75rem,
+);
+
+// colors
+$colors: (
+    'primary-bg': #464646,
+    'primary-normal': #5d5d5d,
+    'primary-normal-fade': #9b9b9b,
+    'primary-more-fade': #e5e5e5,
+    'secondary': #e9e9e9,
+    'secondary-transparent': #e9e9e9de,
+    'focus': #2374de,
+    'input-bottom-border': #cecece,
+    'super-fade': #fafafa,
+    'focus-fade': #2374de17,
+);
+
+// custom
+$little-shadow: 0px 3px 8px #00000025;
+$more-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

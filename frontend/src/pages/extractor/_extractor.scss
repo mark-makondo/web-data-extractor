@@ -1,0 +1,62 @@
+.extractor {
+    @include setFlex(column, flex-start, flex-start);
+
+    width: 100%;
+    position: relative;
+    flex: 1;
+
+    &__body {
+        width: 100%;
+        height: 100%;
+
+        .ant-spin-container {
+            .ant-input-group-wrapper {
+                padding: 0.5rem 0.1rem;
+            }
+            .rendered_container {
+                min-height: 80vh;
+                position: relative;
+                border: 2px solid !important;
+                border-color: getColors(primary-normal-fade);
+                height: 100%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                margin: 0.5rem 0.5rem;
+                transform: translateZ(0);
+
+                & > *:hover {
+                    border: '1px solid red' !important;
+                }
+
+                &.active {
+                    @include customScrollbar;
+
+                    height: 100vh;
+                }
+
+                // put all the classes to remove on the rendered page
+                #modal,
+                .modal,
+                .nav-flyout,
+                #CookiePolicy,
+                .cookiePolicy {
+                    display: none !important;
+                }
+            }
+
+            .ant-back-top {
+                bottom: 5rem;
+
+                &-content {
+                    background-color: #2374ded4;
+
+                    @include responsiveHover {
+                        background-color: getColors(focus);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import './extractorResponsive';

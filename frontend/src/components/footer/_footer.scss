@@ -1,0 +1,61 @@
+.page-footer {
+	@include setFlex(row, center, center);
+
+	position: relative;
+	background-color: getColors(primary-bg);
+	padding: 0.7rem 1.5rem;
+	color: getColors(secondary);
+	font-weight: 600;
+	width: 100%;
+
+	&__left {
+		@include setFlex(column, center, flex-start);
+
+		flex: 1;
+		&-group {
+			a {
+				@include setFlex(row, center, center);
+				svg {
+					margin-right: 0.5rem;
+				}
+			}
+
+			&:hover {
+				svg {
+					fill: getColors(primary-normal-fade);
+				}
+				span {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	&__middle {
+		@include setFlex(row, center, center);
+
+		margin-right: auto;
+
+		svg,
+		span {
+			fill: getColors(secondary);
+			color: getColors(secondary);
+		}
+	}
+	&__right {
+		@include setFlex(column, center, flex-end);
+
+		flex: 1;
+		&-wrapper {
+			@include setFlex(column, center, flex-start);
+		}
+
+		&-group {
+			@include setFlex(row, center, center);
+
+			svg {
+				margin-right: 0.5rem;
+			}
+		}
+	}
+}
+@import './footerResponsive';

@@ -1,0 +1,7 @@
+.ant-modal {
+    &.ant-modal--keyword {
+        .ant-modal-body {
+            min-height: unset;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+.login {
+    position: relative;
+    color: getColors(primary-normal);
+    height: 100%;
+
+    &__header {
+        &-title {
+            margin: 1.5rem 0;
+            font-weight: 600;
+        }
+        &-info {
+            color: getColors(primary-normal-fade);
+            font-weight: 600;
+        }
+    }
+
+    &__body {
+        @include setFlex(column, center, center);
+
+        height: 100%;
+        padding: 2rem;
+
+        form {
+            @include setFlex(column, center, center);
+
+            position: relative;
+            width: 100%;
+            color: getColors(primary-normal);
+            margin-top: 1.5rem;
+
+            .buttons {
+                @include setFlex(row, center, center);
+
+                margin: 1.5rem 0;
+                svg {
+                    transform: scale(0.6);
+                }
+
+                button {
+                    width: 5rem;
+
+                    &:first-of-type {
+                        @include customButtonWithHover(getColors(focus), getColors(secondary)) {
+                            opacity: 0.8;
+                        }
+
+                        margin-right: 1rem;
+                    }
+                    &:not(:first-of-type) {
+                        @include customButtonWithHover(white, getColors(focus)) {
+                            opacity: 0.8;
+                        }
+                        border: 1px solid;
+                        border-color: getColors(focus);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .google-button {
+            @include setFlex(row, space-evenly, center);
+            @include customButtonWithHover(getColors(focus), white) {
+                opacity: 0.8;
+            }
+
+            font-weight: 600;
+            padding: 0.5rem 0.8rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+
+            figcaption {
+                font-size: 12px !important;
+            }
+            svg {
+                margin-right: 0.3rem;
+            }
+        }
+
+        .error {
+            @include errorcss;
+        }
+    }
+
+    &__or {
+        display: flex;
+        font-weight: 600;
+        color: getColors(primary-normal-fade);
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+}
+@import './loginResponsive';

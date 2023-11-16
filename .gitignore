@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+node_modules/
+.ftpconfig
+/.pnp
+.pnp.js
+
+#disable vscode settings
+.vscode
+
+
+# downloaded images
+/backend/downloads/
+/backend/files/
+
+# generated css of sass
+/frontend/src/dist/
+
+# testing
+/coverage
+
+# production
+/build
+frontend/build
+frontend/.env
+
+# misc
+../backend/.env
+backend/.env
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,70 @@
+.history {
+    @include setFlex(row, center, center);
+
+    width: 100%;
+    position: relative;
+    flex: 1;
+    padding: 2rem;
+
+    &-loading {
+        @include customLoading(2rem, getColors(focus));
+        margin: auto;
+    }
+
+    &__body {
+        @include setFlex(column, flex-start, center);
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &-table {
+        @include setFlex(column, flex-start, center);
+
+        position: relative;
+        width: 90vw;
+
+        .button-cell-container {
+            button {
+                @include customButtonWithHover(white, getColors(primary-bg)) {
+                    background-color: getColors(focus);
+                    color: getColors(secondary);
+                    border-color: getColors(focus);
+                }
+
+                border: 1px solid;
+                border-color: getColors(primary-bg);
+            }
+
+            span {
+                pointer-events: none;
+            }
+        }
+
+        .MuiTableRow-root {
+            &.Mui-selected {
+                background-color: getColors(focus-fade) !important;
+                &:hover {
+                    background-color: getColors(focus-fade) !important;
+                }
+            }
+        }
+
+        .collapsed-icon {
+            svg {
+                path {
+                    pointer-events: none;
+                }
+            }
+        }
+        .collapsed-table {
+            .MuiTableBody-root {
+                background-color: getColors(super-fade);
+            }
+        }
+        &__pagination {
+            @include setFlex(row, center, center);
+        }
+    }
+}
+@import './historyResponsive';

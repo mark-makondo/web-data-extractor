@@ -1,0 +1,90 @@
+.home {
+    @include setFlex(column, center, center);
+
+    position: relative;
+    flex: 1;
+
+    &__body {
+        h2 {
+            margin: 1.5rem 0;
+            text-transform: uppercase;
+            color: getColors(primary-bg);
+        }
+    }
+
+    &__item {
+        @include setFlex(row, center, center);
+    }
+
+    &__content {
+        position: relative;
+        color: getColors(primary-normal);
+        border-bottom: 2px solid;
+        border-color: getColors(input-bottom-border);
+        padding-bottom: 2rem;
+
+        &-item {
+            @include setFlex(row, center, center);
+
+            position: relative;
+            width: 8.5rem;
+            height: 8.5rem;
+            border-radius: 50%;
+            border: 2px solid;
+            border-color: getColors(primary-bg);
+            background-color: white;
+            overflow: hidden;
+
+            &:not(:last-of-type) {
+                margin-right: 1.5rem;
+            }
+
+            &.selected {
+                border-color: getColors(focus);
+            }
+
+            a {
+                width: 80%;
+                text-align: center;
+            }
+            svg {
+                position: absolute;
+                margin: auto;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transition: 150ms ease-in;
+                max-width: 100%;
+                width: 70%;
+            }
+
+            span {
+                position: relative;
+                display: inherit;
+                margin: auto;
+                align-items: center;
+                background: white;
+                box-shadow: $little-shadow;
+                text-align: center;
+                text-transform: uppercase;
+                color: getColors(primary-normal);
+                font-weight: 600;
+                transition: 150ms ease-in;
+                z-index: 1;
+            }
+
+            &:hover {
+                span {
+                    transform: translateX(-130%);
+                    transition: 150ms ease-out;
+                }
+                svg {
+                    transform: scale(1.1);
+                    transition: 150ms ease-out;
+                }
+            }
+        }
+    }
+}
+@import './homeResponsive';

@@ -1,0 +1,18 @@
+.dashboard {
+    @include setFlex(column, flex-start, center);
+
+    position: relative;
+    height: 100%;
+    z-index: 50;
+    background-color: getColors(secondary);
+    overflow-y: hidden;
+
+    &__body {
+        @include setFlex(column, flex-start, center);
+        @include customScrollbar;
+
+        width: 100%;
+        flex: 1;
+        overflow-y: hidden;
+    }
+}

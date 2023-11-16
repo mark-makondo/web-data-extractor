@@ -1,0 +1,8 @@
+// responsive medium screen //900px
+@include media-md {
+    .history {
+        &-table {
+            width: 75vw;
+        }
+    }
+}

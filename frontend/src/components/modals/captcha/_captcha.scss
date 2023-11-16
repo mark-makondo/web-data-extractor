@@ -1,0 +1,50 @@
+.ant-modal {
+    &.ant-modal--captcha {
+        .ant-modal-body {
+            min-height: unset;
+        }
+        .captcha-modal {
+            height: 100%;
+            display: grid;
+
+            &__header {
+                @include setFlex(column, space-between, flex-start);
+                width: 100%;
+                padding-bottom: 1rem;
+                border-bottom: 2px solid;
+                border-color: getColors(primary-more-fade);
+
+                &-origin {
+                    max-width: 30rem;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                &-timer {
+                    span {
+                        @include setFlex(row, center, center);
+
+                        strong {
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+            }
+
+            &__body {
+                @include setFlex(column, center, center);
+
+                height: 100%;
+                margin: 2rem 0.5rem;
+                flex: 50%;
+
+                form {
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@import './captchaResponsive';

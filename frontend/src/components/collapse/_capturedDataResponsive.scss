@@ -1,0 +1,24 @@
+// responsive medium screen //900px
+@include media-lg {
+    .ant-collapse {
+        &-content {
+            &-box {
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    overflow: auto;
+                    column-gap: 0.3rem;
+                    row-gap: 0.3rem;
+                }
+            }
+
+            .ant-list {
+                margin-bottom: unset;
+
+                &-item {
+                    overflow-wrap: anywhere;
+                }
+            }
+        }
+    }
+}

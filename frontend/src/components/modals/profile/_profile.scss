@@ -1,0 +1,237 @@
+.profile {
+    position: fixed;
+    background: #80808040;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: 150ms linear;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: $little-shadow;
+    height: max-content;
+    max-width: 30rem;
+    margin: auto;
+
+    &-loading {
+        @include customLoading(1.5rem, getColors(focus));
+
+        margin: 1.5rem 0;
+    }
+
+    &__wrapper {
+        @include setFlex(column, flex-start, center);
+
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    &__header {
+        @include setFlex(row, center, center);
+
+        border-bottom: 2px solid;
+        border-color: getColors(primary-more-fade);
+        width: 100%;
+        padding: 0.5rem 0;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        &-avatar {
+            .MuiAvatar-colorDefault {
+                color: getColors(primary-bg) !important;
+            }
+            .MuiAvatar-root {
+                height: 5rem;
+                width: 5rem;
+                border: 2px solid;
+                border-color: getColors(focus);
+            }
+        }
+    }
+
+    &__body {
+        @include setFlex(column, center, center);
+
+        position: relative;
+        width: 100%;
+        padding: 0 2rem;
+        max-width: 30rem;
+
+        .error {
+            @include errorcss;
+        }
+
+        &__info {
+            @include setFlex(column, flex-start, center);
+
+            width: 100%;
+
+            .input-icons {
+                @include setFlex(row, flex-start, center);
+
+                font-size: 1.1rem;
+                color: getColors(primary-fade);
+
+                svg {
+                    transform: scale(0.8);
+                }
+
+                button {
+                    &.edit {
+                        font-size: 0.9rem;
+                    }
+                    &.edit,
+                    &.cancel {
+                        margin: 0 0.5rem;
+                    }
+
+                    &.cancel,
+                    &.save {
+                        display: none;
+                    }
+
+                    @include responsiveHover {
+                        color: getColors(btn-status-working);
+                    }
+                }
+            }
+
+            &__firstname,
+            &__lastname {
+                @include setFlex(row, center, center);
+
+                position: relative;
+                margin-bottom: 0.3rem;
+                margin-right: auto;
+
+                label {
+                    text-transform: capitalize;
+                }
+                .input-group {
+                    @include setFlex(row, center, center);
+                    span {
+                        text-transform: capitalize;
+                        padding-left: 0.3rem;
+                        font-weight: 600;
+                    }
+                    input {
+                        display: none;
+                        border: none;
+                        outline: none;
+                        padding-left: 0.3rem;
+                        border-bottom: 1px solid;
+                        border-color: getColors(primary-bg);
+                        text-align: center;
+                    }
+                }
+
+                &.editable {
+                    .input-icons .edit {
+                        display: none;
+                        color: getColors(btn-status-working);
+                    }
+                    .input-icons .cancel,
+                    .input-icons .save,
+                    .input-group input {
+                        display: block;
+                    }
+
+                    .input-group span {
+                        display: none;
+                    }
+                }
+            }
+
+            &-loggedinas {
+                margin: 0.5rem 0;
+            }
+
+            &__password {
+                @include setFlex(row, flex-start, center);
+
+                margin-top: 0.3rem;
+                margin-bottom: 0.5rem;
+                margin-right: auto;
+                .input-group {
+                    span {
+                        margin-right: 0.5rem;
+                        text-transform: capitalize;
+                    }
+                    input {
+                        border: none;
+                        outline: none;
+                        max-width: 5rem;
+                    }
+                }
+
+                &.editable {
+                    .input-icons .edit {
+                        display: none;
+                        color: getColors(btn-status-working);
+                    }
+                    .input-icons .cancel {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &__change-password {
+            @include setFlex(column, center, center);
+
+            width: 100%;
+
+            &__wrapper {
+                display: inline-block;
+                margin-right: auto;
+            }
+
+            &__current,
+            &__new {
+                @include setFlex(row, space-between, center);
+
+                label {
+                    &.disabled {
+                        opacity: 0.7;
+                    }
+                    margin-right: 0.5rem;
+                }
+
+                input {
+                    outline: none;
+                    padding: 0.1rem 0.3rem;
+                    border-radius: 0.2rem;
+                    border: 1px solid;
+                    border-color: black;
+                    margin: 0.2rem 0;
+
+                    &:disabled {
+                        opacity: 0.5;
+                    }
+
+                    &:focus,
+                    &:valid {
+                        border-color: getColors(focus);
+                    }
+                }
+            }
+
+            .MuiButton-root {
+                @include customButtonWithHover(getColors(focus), getColors(secondary)) {
+                    opacity: 0.8;
+                    background-color: getColors(focus) !important;
+                }
+                margin: 1.5rem 0;
+                width: auto;
+
+                &:disabled {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+@import './profileResponsive';

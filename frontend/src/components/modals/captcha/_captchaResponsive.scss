@@ -1,0 +1,10 @@
+// responsive medium screen //900px
+@include media-lg {
+    .captcha-modal {
+        &__header {
+            @include setFlex(row, space-between, center);
+
+            width: 100%;
+        }
+    }
+}

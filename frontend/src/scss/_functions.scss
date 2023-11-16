@@ -1,0 +1,179 @@
+/*
+* custom loading for consistency
+*/
+@mixin customLoading($size, $color) {
+    width: $size !important;
+    height: $size !important;
+    color: $color !important;
+}
+
+/*
+* ignore touch screen devices for hover
+* must be inluded inside of an element to be hovered
+*/
+@mixin responsiveHover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+/*
+* custom button for consistency
+* must be included insife of a button element
+*/
+@mixin customButtonWithHover($bg, $color) {
+    padding: 0.25rem 0.8rem;
+    border-radius: 0.4rem;
+    border: none;
+    font-weight: 600;
+    outline: none;
+    transition: 150ms linear;
+    cursor: pointer;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: $bg;
+    color: $color;
+
+    @include responsiveHover {
+        @content;
+    }
+}
+
+/*
+* error css for consistency
+*/
+@mixin errorcss {
+    margin-top: 0.5rem;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+    color: getColors(primary-normal);
+    font-weight: 600;
+    z-index: 1;
+    border-radius: 0.2rem;
+
+    span {
+        color: red;
+    }
+}
+
+// custom scroll
+@mixin customScrollbar {
+    /* Designing for scroll-bar */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: getColors(primary-normal-fade);
+        border-radius: 5px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: getColors(primary-bg);
+        border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: getColors(focus);
+    }
+}
+
+// font size
+@function getFontSize($type, $target) {
+    @if $type == s {
+        @return map-get($font-size-s, $target);
+    }
+    @if $type == l {
+        @return map-get($font-size-l, $target);
+    } @else {
+        @error "Invalid type #{type}.";
+    }
+}
+@mixin setFontSize($type) {
+    .stand-out {
+        font-size: getFontSize($type, stand-out) !important;
+    }
+    .normal-1 {
+        font-size: getFontSize($type, normal-1) !important;
+    }
+    .normal-2 {
+        font-size: getFontSize($type, normal-2) !important;
+    }
+    .normal-3 {
+        font-size: getFontSize($type, normal-3) !important;
+    }
+    .normal-4 {
+        font-size: getFontSize($type, normal-4) !important;
+    }
+}
+
+// max width
+@function getMaxWidth($target) {
+    @return map-get($max-width, $target);
+}
+
+// responsive mixin
+@mixin media-md {
+    @media screen and (min-width: 56.25em) {
+        // 900px
+        @content;
+    }
+}
+@mixin media-lg {
+    @media screen and (min-width: 75em) {
+        // 1200px
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width: 118.75em) {
+        // 1900px
+        @content;
+    }
+}
+
+// display flex
+@mixin setFlex($direction, $align1, $align2) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $align1;
+    align-items: $align2;
+    align-content: $align2;
+}
+
+// get colors
+@function getColors($target) {
+    @return map-get($colors, $target);
+}
+
+// keyframes
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}

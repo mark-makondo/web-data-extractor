@@ -1,0 +1,45 @@
+{
+    "title": null,
+    "origin": null,
+    "saveDoc": [
+        {
+            "subTitle": "name",
+            "url": "www.asdsadsa.com",
+            "data": ["adsadsada", "sadadasda"]
+        },
+        {
+            "subTitle": "website",
+            "url": "www.asdsadsa.com",
+            "data": ["adsadsada", "asdasdsad"]
+        },
+        {
+            "__comment only": "for follow links - single result",
+            "subTitle": "tel number",
+            "followed_link": true,
+            "url": "www.asdsadsa.com",
+            "data": ["adsadsada", "asdasdsad"]
+        },
+        {
+            "__comment only": "for follow links - multiple result",
+            "subTitle": "review users",
+            "followed_link": true,
+            "url": "www.asdsadsa.com",
+            "data": [
+                ["user1", "user2"],
+                ["user3", "user4"]
+            ]
+        }
+    ],
+    "followed_links": [
+        {
+            "subTitle": "tel no",
+            "url_fl": "www.asdsadsa.com",
+            "data": [
+                {
+                    "telno": ["sdsd"],
+                    "review": ["asdsads", "review 2"]
+                }
+            ]
+        }
+    ]
+}

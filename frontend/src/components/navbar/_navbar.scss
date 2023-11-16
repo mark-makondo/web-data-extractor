@@ -1,0 +1,78 @@
+.page-navbar {
+    @include setFlex(row, center, center);
+
+    position: relative;
+    background-color: getColors(primary-bg);
+    padding: 0.7rem 1.5rem;
+    color: getColors(secondary);
+    font-weight: 600;
+    height: 4rem;
+    width: 100%;
+
+    &-loading {
+        @include customLoading(1.5rem, getColors(secondary));
+    }
+
+    &--selected {
+        border-bottom: 2px solid;
+        border-color: getColors(focus) !important;
+    }
+
+    .logo {
+        flex: 1;
+        svg {
+            fill: getColors(secondary);
+        }
+    }
+
+    &__middle {
+        @include setFlex(row, center, center);
+
+        margin-right: auto;
+        height: 100%;
+
+        a {
+            @include setFlex(row, center, center);
+            color: getColors(secondary) !important;
+            height: 100%;
+            text-transform: uppercase;
+            text-decoration: none !important;
+
+            &:not(:last-of-type) {
+                margin-right: 1rem;
+            }
+            &:hover {
+                border-bottom: 2px solid;
+                border-color: getColors(secondary);
+                text-decoration: none !important;
+            }
+        }
+    }
+    &__avatar {
+        margin-right: 1rem;
+
+        .MuiAvatar-colorDefault {
+            color: getColors(primary-bg) !important;
+        }
+
+        .MuiAvatar-root {
+            border: 1px solid;
+            border-color: getColors(focus);
+        }
+    }
+
+    &__logout {
+        @include setFlex(row, flex-end, center);
+
+        flex: 1;
+
+        button {
+            @include customButtonWithHover(white, getColors(primary-bg)) {
+                background-color: white;
+                opacity: 0.8;
+            }
+
+            text-transform: capitalize;
+        }
+    }
+}

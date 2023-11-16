@@ -1,0 +1,18 @@
+.logo {
+	@include setFlex(row, flex-start, center);
+
+	position: relative;
+	color: getColors(primary-normal);
+	width: 100%;
+
+	svg {
+		fill: getColors(primary-normal);
+		width: 3rem;
+	}
+
+	span {
+		font-weight: 700;
+		margin-left: 0.5rem;
+	}
+}
+@import './logoResponsive';

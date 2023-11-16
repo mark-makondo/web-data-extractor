@@ -1,0 +1,164 @@
+.ant-modal {
+    &-header {
+        background: getColors(focus);
+    }
+
+    &-title {
+        font-weight: 600;
+        color: white;
+    }
+
+    &-body {
+        padding-top: 1rem;
+        min-height: 40rem;
+
+        .miner {
+            @include setFlex(column, flex-start, center);
+            min-height: inherit;
+            width: 100%;
+
+            &-header {
+                display: grid;
+                grid-template-columns: 1fr;
+                place-items: baseline;
+                column-gap: 1rem;
+                height: unset;
+                border-bottom: 2px solid;
+                border-color: getColors(primary-more-fade);
+                width: 100%;
+
+                &__functions {
+                    display: flex;
+                    // margin: auto;
+                    height: 100%;
+                }
+
+                &__btext {
+                    position: absolute;
+                    margin-top: -15px;
+                    margin-left: 10px;
+                    color: getColors(primary);
+                    font-weight: 600;
+                    background: white;
+                    border-radius: 10px;
+                    padding: 2px 10px;
+                }
+
+                &--items {
+                    margin: 1rem;
+                    border: 2px solid;
+                    border-color: getColors(primary-more-fade);
+
+                    &:first-child {
+                        margin-left: unset;
+                    }
+                }
+
+                &__title {
+                    @include setFlex(column, center, flex-start);
+
+                    width: 100%;
+                    margin-bottom: auto;
+
+                    input {
+                        &::first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+                    &-text {
+                        @include setFlex(row, flex-start, center);
+
+                        h1 {
+                            font-weight: 600;
+                            margin-right: 0.5rem;
+                        }
+
+                        svg {
+                            @include responsiveHover {
+                                fill: getColors(focus);
+                            }
+                        }
+                    }
+                }
+
+                &__basic {
+                    @include setFlex(column, flex-start, flex-start);
+
+                    &-wrapper {
+                        button {
+                            &:not(:last-of-type) {
+                                border-color: getColors(primary-bg);
+                                background: getColors(primary-bg);
+                                margin-right: 1rem;
+                            }
+
+                            &:last-of-type {
+                                background: white;
+                                border-color: getColors(primary-bg);
+                                color: getColors(primary-bg);
+                                font-weight: 600;
+                            }
+
+                            &:not(:disabled) {
+                                @include responsiveHover {
+                                    opacity: 0.8;
+                                }
+                            }
+
+                            &:disabled {
+                                color: rgba(0, 0, 0, 0.25);
+                                background: #f5f5f5;
+                                border-color: #d9d9d9;
+                            }
+                        }
+                    }
+                }
+
+                &__drilling {
+                    @include setFlex(column, flex-start, flex-start);
+
+                    &-wrapper {
+                        position: relative;
+
+                        .title {
+                            margin-right: 0.5rem;
+                        }
+
+                        .ant-input-number {
+                            max-width: 3.5rem;
+                        }
+                    }
+
+                    &.disabled {
+                        color: rgba(0, 0, 0, 0.25);
+                        cursor: not-allowed;
+                        opacity: 1;
+
+                        .miner-header__btext {
+                            span {
+                                color: rgba(0, 0, 0, 0.25);
+                            }
+                        }
+                    }
+                }
+
+                .inside-wrappers {
+                    @include setFlex(row, center, center);
+
+                    height: 100%;
+                    padding: 0.5rem;
+                    padding-top: 1.2rem;
+                }
+            }
+
+            &-body {
+                .ant-table-thead {
+                    span {
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+}
+@import './minerResponsive';

@@ -1,0 +1,11 @@
+.watcher {
+    position: relative;
+
+    &__body {
+        margin: 1.5rem;
+
+        .ant-statistic-content-value {
+            font-weight: 16px !important;
+        }
+    }
+}

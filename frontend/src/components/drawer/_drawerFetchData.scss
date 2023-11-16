@@ -1,0 +1,105 @@
+.ant-popover {
+    max-width: 18rem !important;
+    text-align: left;
+
+    &-title {
+        font-weight: 600;
+    }
+
+    &-inner-content {
+        @include setFlex(row, center, center);
+        button {
+            &:first-of-type {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}
+
+.ant-drawer {
+    font-family: $main !important;
+
+    &-header {
+        font-weight: 600;
+        box-shadow: $little-shadow;
+        background-color: getColors(focus);
+    }
+
+    &-title {
+        @include setFlex(row, flex-start, center);
+
+        color: white !important;
+    }
+
+    &-close {
+        color: white !important;
+    }
+
+    &-body {
+        .drawer {
+            &-title {
+                @include setFlex(column, center, flex-start);
+
+                width: 100%;
+                margin-bottom: auto;
+
+                input {
+                    &::first-letter {
+                        text-transform: capitalize;
+                    }
+                }
+
+                &-text {
+                    @include setFlex(row, flex-start, center);
+
+                    h1 {
+                        font-weight: 600;
+                        margin-right: 0.5rem;
+                    }
+
+                    svg {
+                        @include responsiveHover {
+                            fill: getColors(focus);
+                        }
+                    }
+                }
+            }
+
+            &-textarea__header,
+            &-buttons__header {
+                text-align: left;
+                font-weight: 600;
+            }
+
+            &-buttons {
+                &__header {
+                    @include setFlex(row, flex-start, center);
+
+                    h1 {
+                        font-weight: 600;
+                        margin-right: 0.5rem;
+                    }
+                    span {
+                        @include setFlex(row, center, center);
+                    }
+                    svg {
+                        @include responsiveHover {
+                            fill: getColors(focus);
+                        }
+                    }
+                }
+                &__body {
+                    @include setFlex(row, flex-start, center);
+
+                    button {
+                        &:not(:last-of-type) {
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import './drawerFetchDataResponsive';

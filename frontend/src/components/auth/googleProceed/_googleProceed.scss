@@ -1,0 +1,58 @@
+.google-proceed {
+    position: relative;
+    color: getColors(primary-normal);
+    width: 95vw;
+    height: 100%;
+
+    &__role {
+        margin-right: auto;
+        margin-top: 1rem;
+    }
+
+    &__header {
+        width: 100%;
+
+        &-title {
+            margin: 1.5rem 0;
+        }
+        &-info {
+            color: getColors(primary-normal-fade);
+            font-weight: 600;
+        }
+    }
+
+    &__body {
+        @include setFlex(column, center, center);
+
+        padding: 2rem;
+        height: 100%;
+
+        form {
+            @include setFlex(column, center, center);
+
+            position: relative;
+            width: 100%;
+            color: getColors(primary-normal);
+            margin-top: 1.5rem;
+
+            svg {
+                transform: scale(0.6);
+            }
+
+            button {
+                @include customButtonWithHover(getColors(focus), getColors(secondary)) {
+                    opacity: 0.8;
+                    background-color: getColors(focus) !important;
+                }
+
+                margin: 1.5rem 0;
+                width: 5rem;
+            }
+        }
+
+        .error {
+            @include errorcss;
+        }
+    }
+}
+@import './googleProceedResponsive';

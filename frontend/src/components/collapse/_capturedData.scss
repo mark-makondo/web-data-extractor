@@ -1,0 +1,155 @@
+.ant-collapse {
+    position: fixed;
+    bottom: 0;
+    width: auto;
+    z-index: 99;
+    box-shadow: $little-shadow;
+    max-height: 90vh;
+
+    &.no-data {
+        .ant-collapse-content {
+            height: 0 !important;
+        }
+    }
+
+    .ant-divider {
+        margin: unset;
+        border-width: 2px;
+        border-color: getColors(primary-more-fade);
+    }
+
+    .collapse-header {
+        margin: 0.5rem;
+    }
+
+    &-header {
+        @include responsiveHover {
+            background-color: getColors(focus);
+        }
+
+        color: white !important;
+        font-weight: 600;
+        box-shadow: $little-shadow;
+        background-color: getColors(primary-bg);
+    }
+
+    &-item {
+        position: relative;
+        width: 15rem;
+        transition: 150ms width ease-in;
+
+        &-active {
+            max-height: 90vh;
+            height: 100%;
+            width: 100vw;
+            transition: 150ms width ease-out;
+
+            .ant-collapse-header {
+                background-color: getColors(focus);
+            }
+        }
+    }
+
+    &-content {
+        // header where buttons and input are placed
+
+        .ant-space {
+            &-item {
+                input {
+                    width: 15rem;
+                }
+
+                .buttons {
+                    @include setFlex(row, center, flex-start);
+
+                    button {
+                        height: 2.5rem;
+
+                        &:not(:last-of-type) {
+                            margin-right: 0.5rem;
+                        }
+
+                        &:first-of-type {
+                            background-color: getColors(primary-bg);
+                            border-color: getColors(primary-bg);
+                            margin-right: 1rem;
+
+                            &:not(:disabled) {
+                                @include responsiveHover {
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-box {
+            .grid-container {
+                @include customScrollbar;
+
+                display: grid;
+                overflow-y: auto;
+                overflow-x: hidden;
+                column-gap: 0.3rem;
+                row-gap: 0.3rem;
+                padding: 0.5rem;
+            }
+        }
+
+        // body where tables are placed
+        .ant-list {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.5rem;
+            max-height: 20rem;
+
+            &-header {
+                width: 100%;
+                h2 {
+                    font-weight: bold;
+                    text-transform: capitalize;
+                }
+            }
+
+            .ant-spin-nested-loading {
+                .ant-spin-container {
+                    @include customScrollbar;
+
+                    overflow: auto;
+                    max-height: 13rem;
+                }
+
+                flex: 1;
+
+                ul {
+                    width: 100%;
+                    margin: auto;
+                }
+            }
+            &-item {
+                @include customScrollbar;
+
+                display: block;
+                width: 100%;
+                overflow-wrap: anywhere;
+                overflow: auto;
+                max-height: 5rem;
+                padding-right: 0.2rem;
+            }
+        }
+
+        &-active {
+            @include customScrollbar;
+
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        & > &-box {
+            padding-bottom: 3rem;
+        }
+    }
+}
+@import './capturedDataResponsive';

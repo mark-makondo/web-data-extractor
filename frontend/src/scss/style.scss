@@ -1,0 +1,42 @@
+// initializations
+@import 'variables';
+@import 'init';
+@import 'functions';
+
+// root
+@import '../app';
+
+// logo
+@import '../components/logo/logo';
+
+// pages
+@import '../pages/dashboard/dashboard';
+@import '../pages/home/home';
+@import '../pages/admin/admin';
+@import '../pages/extractor/extractor';
+@import '../pages/history/history';
+
+// auth components
+@import '../components/auth/format/format';
+@import '../components/auth/groupedInput/groupedInput';
+@import '../components/auth/login/login';
+@import '../components/auth/register/register';
+@import '../components/auth/googleProceed/googleProceed';
+
+// dashboard
+@import '../components/navbar/navbar';
+@import '../components/footer/footer';
+
+// modal
+@import '../components/modals/profile/profile';
+@import '../components/modals/miner/miner';
+@import '../components/modals/captcha/captcha';
+@import '../components/modals/keywords/keyword';
+// collapse
+@import '../components/collapse/capturedData';
+
+//drawer
+@import '../components/drawer/drawerFetchData';
+
+// responsive
+@import 'globalResponsive';
